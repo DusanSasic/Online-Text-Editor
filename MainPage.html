@@ -1,0 +1,158 @@
+<!--
+ FILE				: MainPage.html
+ PROJECT			: A07 - WDD Assignment
+ FIRST VERSION		: 2020-12-7 
+ AUTHOR			    : Dusan Sasic & Kevin Downer
+ DESCRIPTION		: Main page for the whole project that displays a text editor
+                    interface and it's elements. This file is linked to two external    
+                    files, one for CSS styling and one for JS script. In this application
+                    user can load, save or create new files and edit them through simple
+                    text box editor.
+-->
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+
+<!-- Source of the jquery used in this project-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!-- Connection to the JS file-->
+<script type="text/javascript" src="A7_Script.js"></script>
+<!-- Connection to the CSS file-->
+<link rel="stylesheet" href="A7_Style.css"></link>
+
+
+<title>Text Editor</title>
+
+
+</head>
+
+
+
+
+
+
+<body>
+
+
+
+    <!-- Grid view created out of 9 <div> elements
+    Each grid <div> is numbered-->
+    <div class="grid-container">
+
+
+
+        <!--1-->
+        <div class="grid-item">
+        </div>
+
+
+
+        <!--2-->
+        <div class="grid-item">
+            <!--In-Page title-->
+            <h1>Text Editor v1.0</h1>
+        </div>
+
+
+
+        <!--3-->
+        <div class="grid-item">
+        </div>
+
+        
+
+        <!--4-->
+        <div class="grid-item" style="text-align: right;">
+
+            <!--Control buttons on the left-hand side-->
+            <button id="btn_newFile" class="action-button shadow animate blue">New File</button><br>
+            <button id="btn_save" class="action-button shadow animate green">Save</button><br>
+            <button id="btn_saveAs" class="action-button shadow animate green">Save As</button><br>
+
+            <!--Drop-Down list for choosing a file to work on-->
+            <label for="lst_files" >Choose a file:</label>
+            <select id="lst_files" class="action-button shadow animate yellow"></select>
+            
+            <div id="overall_feedback" style="word-wrap: normal; text-align: right;border: 2px black;">&nbsp;</div>
+
+        </div>
+
+
+
+        <!--5-->
+        <div class="grid-item">
+            <textarea style="white-space: pre-line" id="txt_main" rows="25" cols="75">
+            </textarea>
+        </div>
+
+
+
+        <!--6-->
+        <div class="grid-item">
+        </div>
+        
+        
+
+        <!--7-->
+        <div class="grid-item">
+        </div>
+        
+
+
+        <!--8-->
+        <div class="grid-item">
+        </div>
+
+
+
+        <!--9-->
+        <div class="grid-item">
+        </div>
+
+
+    </div>
+
+
+
+
+    <!---->
+    <div class="popup_box">
+        <span class="helper"></span>
+        <div>
+            <div class="popupCloseButton">&times;</div>
+            <h4>Save as...</h4>
+            <p id="p_notExistHelp"></p>
+            <p>Please specify a file name:</p>
+            <input id="txt_saveAsName" type="text"/>
+            <button id="btn_BoxSaveAs" class="action-button shadow animate green">Save</button>
+            <div id="p_saveAsError" style="color:red;"></div>
+        </div>
+    </div>
+
+
+
+    <div class="popup_yesno">
+        <span class="helper"></span>
+        <div>
+            <h4>File already exists</h4>
+            <p id="p_notExistHelp"></p>
+            <p>Would you like to owerwrite it?</p>
+            <button id="btn_BoxYes" class="action-button shadow animate green">YES</button>
+            <button id="btn_BoxNo" class="action-button shadow animate red">NO</button>
+        </div>
+    </div>
+
+
+    
+
+
+</body>
+
+
+</html>
